@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+
+export DH_GOLANG_EXCLUDES := cmd/sockaddr
+
+%:
+	dh $@ --buildsystem=golang --with=golang
+
+# The template tests depend on the build machine's network stack matching the
+# author's, and no amount of patching would make them reliable enough.
+override_dh_auto_test: DH_GOLANG_EXCLUDES += template
+override_dh_auto_test:
+	dh_auto_test
