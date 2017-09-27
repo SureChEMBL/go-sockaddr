@@ -4,7 +4,7 @@ Uploaders: Martín Ferrari <tincho@debian.org>,
 Section: devel
 Testsuite: autopkgtest-pkg-go
 Priority: extra
-Build-Depends: debhelper (>= 10),
+Build-Depends: debhelper (>= 9),
                dh-golang,
                golang-any,
                golang-github-hashicorp-errwrap-dev,
